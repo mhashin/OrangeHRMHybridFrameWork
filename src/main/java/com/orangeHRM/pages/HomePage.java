@@ -2,7 +2,7 @@ package com.orangeHRM.pages;
 
 import com.orangeHRM.util.ElementUtil;
 
-public class HomePage {
+public final class HomePage  {
 	
 	private String welcome_xpath="//a[contains(text(),'%replace%')]";
 	

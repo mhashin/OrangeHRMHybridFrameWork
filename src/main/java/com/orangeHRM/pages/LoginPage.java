@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import com.orangeHRM.util.ElementUtil;
 
 
-public class LoginPage extends BasePage {
+public final class LoginPage {
 	
 
 

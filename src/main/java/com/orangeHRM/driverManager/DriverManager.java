@@ -2,7 +2,7 @@ package com.orangeHRM.driverManager;
 
 import org.openqa.selenium.WebDriver;
 
-public class DriverManager {
+public final class DriverManager {
 	
 	public static ThreadLocal<WebDriver> dr=new ThreadLocal<WebDriver>();
 

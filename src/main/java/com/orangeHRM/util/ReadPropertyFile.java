@@ -3,14 +3,14 @@ package com.orangeHRM.util;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-public class ReadPropertyFile {
+public final class ReadPropertyFile {
 	
 	public static String get(String key) {
 		
 		String propertyValue=null;
 		Properties prop=new Properties();
 		try {
-			FileInputStream fis=new FileInputStream("./src/test/resources/config.properties");
+			FileInputStream fis=new FileInputStream(Constants.getConfigpath());
 			prop.load(fis);
 			propertyValue=prop.getProperty(key);
 			if(propertyValue==null) {

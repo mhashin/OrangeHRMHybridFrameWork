@@ -6,7 +6,7 @@ import com.orangeHRM.pages.HomePage;
 import com.orangeHRM.pages.LoginPage;
 import com.orangeHRM.util.ReadPropertyFile;
 
-public class LoginTest extends BaseTest {
+public final class LoginTest extends BaseTest {
 
 	HomePage homePage;
 	LoginPage loginPage;
