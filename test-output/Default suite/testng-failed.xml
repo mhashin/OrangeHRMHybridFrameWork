@@ -6,7 +6,8 @@
       <class name="com.orangeHRM.test.LoginTest">
         <methods>
           <include name="setUp"/>
-          <include name="demo"/>
+          <include name="userInvalidLoginTest" invocation-numbers="0 1"/>
+          <include name="userValidLoginTest" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.orangeHRM.test.LoginTest -->
     </classes>

@@ -10,7 +10,13 @@ import com.orangeHRM.driverManager.DriverManager;
 public final class ElementUtil {
 
 	public static WebElement getWebElement(By locator) {
-		WebElement ele=DriverManager.getDriver().findElement(locator);
+		WebElement ele=null;
+		try {
+		ele=DriverManager.getDriver().findElement(locator);
+		}
+		catch(Exception e){
+			System.out.println("element could not be created..." + locator);
+		}
 		return ele;
 	}
 	
@@ -44,5 +50,9 @@ public final class ElementUtil {
 		WebElement ele=DriverManager.getDriver().findElement(By.xpath(xpath.replace("%replace%", value)));
 		waitForWebElementToVisible(ele);
 		return ele;
+	}
+	
+	public static String isTextPresent(By locator) {
+		return getWebElement(locator).getText();
 	}
 }

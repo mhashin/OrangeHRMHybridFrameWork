@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.LoginTest" hash-for-method="userLogin">userLogin</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.LoginTest" hash-for-method="userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})">userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.LoginTest" hash-for-method="userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})">userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,9 +130,18 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="userLogin">
-                  </a> <!-- userLogin -->
-                  <span class="method-name">userLogin</span>
+                  <a name="userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})">
+                  </a> <!-- userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748}) -->
+                  <span class="method-name">userInvalidLoginTest</span>
+                  <span class="parameters">({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})">
+                  </a> <!-- userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123}) -->
+                  <span class="method-name">userValidLoginTest</span>
+                  <span class="parameters">({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -187,16 +201,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'userLogin')
+data.setCell(0, 1, 'userValidLoginTest')
 data.setCell(0, 2, 'com.orangeHRM.test.LoginTest')
-data.setCell(0, 3, 16155);
+data.setCell(0, 3, 7862);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'userInvalidLoginTest')
+data.setCell(1, 2, 'com.orangeHRM.test.LoginTest')
+data.setCell(1, 3, 1792);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -228,9 +246,17 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">userLogin</span>
-                <span class="method-start">20454 ms</span>
+                <span class="method-name">userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})</span>
+                <span class="method-start">12648 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})</span>
+                <span class="method-start">20521 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">22316 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
