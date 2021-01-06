@@ -9,7 +9,8 @@
       <class name="com.orangeHRM.test.LoginTest">
         <methods>
           <include name="setUp"/>
-          <include name="userLogin"/>
+          <include name="tearDown"/>
+          <include name="userInvalidLoginTest" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.orangeHRM.test.LoginTest -->
     </classes>

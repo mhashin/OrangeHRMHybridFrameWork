@@ -11,6 +11,7 @@ public final class LoginPage {
 	private By txtboxPassword = By.xpath("//input[@id='txtPassword' and @type='password']");
 	private By btnLogin = By.id("btnLogin");
 	private By txtErrorLogin = By.xpath("//span[text()='Invalid credentials']");
+	
 
 	public LoginPage enterUsername(String username) {
 		ElementUtil.doSendKeys(txtboxUsername, username);
@@ -33,10 +34,12 @@ public final class LoginPage {
 	public String errorTextInvalidLogin() {
 		return ElementUtil.getText(txtErrorLogin);
 	}
-
+	
 	public HomePage userLogin(String un, String pwd) {
 		enterUsername(un).enterPassword(pwd).clickLogin();
 		return new HomePage();
 	}
+	
+	
 
 }

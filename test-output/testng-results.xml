@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="36629" started-at="2020-12-28T13:58:41Z" finished-at="2020-12-28T13:59:18Z">
+  <suite name="Suite" duration-ms="23758" started-at="2021-01-05T05:49:37Z" finished-at="2021-01-05T05:50:01Z">
     <groups>
     </groups>
-    <test name="Test chrome" duration-ms="36629" started-at="2020-12-28T13:58:41Z" finished-at="2020-12-28T13:59:18Z">
+    <test name="Test chrome" duration-ms="23758" started-at="2021-01-05T05:49:37Z" finished-at="2021-01-05T05:50:01Z">
       <class name="com.orangeHRM.test.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.orangeHRM.test.LoginTest@25b485ba]" name="setUp" is-config="true" duration-ms="20422" started-at="2020-12-28T13:58:41Z" finished-at="2020-12-28T13:59:01Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.orangeHRM.test.LoginTest@548a102f]" name="setUp" is-config="true" duration-ms="11346" started-at="2021-01-05T05:49:37Z" finished-at="2021-01-05T05:49:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="userLogin()[pri:0, instance:com.orangeHRM.test.LoginTest@25b485ba]" name="userLogin" duration-ms="16155" started-at="2020-12-28T13:59:01Z" finished-at="2020-12-28T13:59:18Z">
+        <test-method status="PASS" signature="userValidLoginTest(java.util.Map)[pri:1, instance:com.orangeHRM.test.LoginTest@548a102f]" name="userValidLoginTest" duration-ms="7862" started-at="2021-01-05T05:49:50Z" data-provider="getData" finished-at="2021-01-05T05:49:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userLogin -->
+        </test-method> <!-- userValidLoginTest -->
+        <test-method status="PASS" signature="userInvalidLoginTest(java.util.Map)[pri:2, instance:com.orangeHRM.test.LoginTest@548a102f]" name="userInvalidLoginTest" duration-ms="1792" started-at="2021-01-05T05:49:58Z" data-provider="getData" finished-at="2021-01-05T05:50:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userInvalidLoginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orangeHRM.test.LoginTest@548a102f]" name="tearDown" is-config="true" duration-ms="1435" started-at="2021-01-05T05:50:00Z" finished-at="2021-01-05T05:50:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.orangeHRM.test.LoginTest -->
     </test> <!-- Test chrome -->
   </suite> <!-- Suite -->
