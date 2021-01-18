@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\muhammed.hashin\eclipse-workspace\OrangeHRMHybridFramework\src\test\resources\testRunners\testng.xml</span>
+                    <span>C:\Users\muhammed.hashin\eclipse-workspace\SeleniumMavenHybridFramework\src\test\resources\testRunners\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,12 +102,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.LoginTest" hash-for-method="userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})">userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.TC02_AddUserTest" hash-for-method="addUser">addUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.LoginTest" hash-for-method="userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})">userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orangeHRM.test.TC01_LoginTest" hash-for-method="userValidLoginTest({TestName=userValidLoginTest, UserName=muhammedhashin16@gmail.com, Execute=Y, Password=Selenium@2021...)">userValidLoginTest({TestName=userValidLoginTest, UserName=muhammedhashin16@gmail.com, Execute=Y, Password=Selenium@2021...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,23 +125,30 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.orangeHRM.test.LoginTest</span>
+              <span class="class-name">com.orangeHRM.test.TC01_LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})">
-                  </a> <!-- userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748}) -->
-                  <span class="method-name">userInvalidLoginTest</span>
-                  <span class="parameters">({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})</span>
+                  <a name="userValidLoginTest({TestName=userValidLoginTest, UserName=muhammedhashin16@gmail.com, Execute=Y, Password=Selenium@2021...)">
+                  </a> <!-- userValidLoginTest({TestName=userValidLoginTest, UserName=muhammedhashin16@gmail.com, Execute=Y, Password=Selenium@2021...) -->
+                  <span class="method-name">userValidLoginTest</span>
+                  <span class="parameters">({TestName=userValidLoginTest, UserName=muhammedhashin16@gmail.com, Execute=Y, Password=Selenium@2021})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.orangeHRM.test.TC02_AddUserTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})">
-                  </a> <!-- userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123}) -->
-                  <span class="method-name">userValidLoginTest</span>
-                  <span class="parameters">({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})</span>
+                  <a name="addUser">
+                  </a> <!-- addUser -->
+                  <span class="method-name">addUser</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,7 +156,7 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\muhammed.hashin\eclipse-workspace\OrangeHRMHybridFramework\src\test\resources\testRunners\testng.xml</span>
+            <span class="header-content">C:\Users\muhammed.hashin\eclipse-workspace\SeleniumMavenHybridFramework\src\test\resources\testRunners\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -157,11 +164,12 @@
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;2&quot; name=&quot;Suite&quot;&gt;
   &lt;listeners&gt;
-    &lt;listener class-name=&quot;com.orangeHRM.listener.ExtentReportListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.orangeHRM.listener.ExtentListener&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Test chrome&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.orangeHRM.test.LoginTest&quot;/&gt;
+      &lt;class name=&quot;com.orangeHRM.test.TC01_LoginTest&quot;/&gt;
+      &lt;class name=&quot;com.orangeHRM.test.TC02_AddUserTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test chrome --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -175,7 +183,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test chrome (1 class)</span>
+                <span class="test-name">Test chrome (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -203,18 +211,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'userValidLoginTest')
-data.setCell(0, 2, 'com.orangeHRM.test.LoginTest')
-data.setCell(0, 3, 7862);
+data.setCell(0, 1, 'addUser')
+data.setCell(0, 2, 'com.orangeHRM.test.TC02_AddUserTest')
+data.setCell(0, 3, 9833);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'userInvalidLoginTest')
-data.setCell(1, 2, 'com.orangeHRM.test.LoginTest')
-data.setCell(1, 3, 1792);
+data.setCell(1, 1, 'userValidLoginTest')
+data.setCell(1, 2, 'com.orangeHRM.test.TC01_LoginTest')
+data.setCell(1, 3, 3822);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <span class="suite-total-time">Total running time: 13 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -229,9 +237,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.orangeHRM.test.TC02_AddUserTest</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">setUp</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -240,23 +255,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.orangeHRM.test.LoginTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.orangeHRM.test.TC01_LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">userValidLoginTest({TestName=userValidLoginTest, UserName=Admin, Execute=Y, Password=admin123})</span>
-                <span class="method-start">12648 ms</span>
+                <span class="method-name">userValidLoginTest({TestName=userValidLoginTest, UserName=muhammedhashin16@gmail.com, Execute=Y, Password=Selenium@2021...)</span>
+                <span class="method-start">19158 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.orangeHRM.test.TC02_AddUserTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">userInvalidLoginTest({TestName=userInvalidLoginTest, UserName=admin, Execute=Y, Password=dmin748})</span>
-                <span class="method-start">20521 ms</span>
+                <span class="method-name">addUser</span>
+                <span class="method-start">22988 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">22316 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
