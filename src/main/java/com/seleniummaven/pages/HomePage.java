@@ -41,6 +41,10 @@ public final class HomePage  {
 		return new ContactPage();
 	}
 	
+	public void clickContact() {
+		ElementUtil.waitForElementToBeVisible(textSearch);
+		ElementUtil.mousehoverToElement(menuItem, "Contacts");
+	}
 	public LoginPage doLogout() {
 		clickSettingsIcon();
 		clickLogOut();

@@ -68,15 +68,19 @@ public final class ElementUtil {
 	}
 
 	public static boolean elementIsDisplayed(By locator) {
-
 		return getWebElement(locator).isDisplayed();
 	}
 
-	public static void clickElementByJS(By locator) {
-		WebElement element = DriverManager.getDriver().findElement(locator);
+	public static void clickElementByJS(By locator) {	
 		JavascriptExecutor js = ((JavascriptExecutor) DriverManager.getDriver());
-		js.executeScript("arguments[0].click()", element);
+		js.executeScript("arguments[0].click()", getWebElement(locator));
 	}
+	
+	public static void dynamicElementByJS(String xpath, String value) {	
+		JavascriptExecutor js = ((JavascriptExecutor) DriverManager.getDriver());
+		js.executeScript("arguments[0].click()", dynamicWebElement(xpath, value));
+	}
+	
 
 	public static void mousehoverToElement(String xpath, String value) {
 		Actions actions = new Actions(DriverManager.getDriver());
@@ -84,11 +88,21 @@ public final class ElementUtil {
 		actions.moveToElement(element).build().perform();
 	}
 
-	public static WebElement waitForDynamicWebElement(String xpath, String value) {
+	public static void mousehoverClick(String xpath, String value) {
+		Actions actions = new Actions(DriverManager.getDriver());
+		WebElement element = DriverManager.getDriver().findElement(By.xpath(xpath.replace("%replace%", value)));
+		actions.moveToElement(element).click().build().perform();
+		
+	}
+	
+	public static void moveToElement(By locator) {
+		Actions actions = new Actions(DriverManager.getDriver());
+		actions.moveToElement(getWebElement(locator)).build().perform();
+	}
+	
+	public static void waitForDynamicWebElement(String xpath, String value) {
 		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Constants.getExplicitwait());
-		WebElement ele = DriverManager.getDriver().findElement(By.xpath(xpath.replace("%replace%", value)));
-		wait.until(ExpectedConditions.visibilityOf(ele));
-		return ele;
+		wait.until(ExpectedConditions.visibilityOf(dynamicWebElement(xpath, value)));
 	}
 
 	public static void getDropDownoptions(By locator, String text, String elementName) {

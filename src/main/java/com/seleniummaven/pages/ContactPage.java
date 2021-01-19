@@ -1,44 +1,63 @@
 package com.seleniummaven.pages;
 
-import org.openqa.selenium.By;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import com.google.common.util.concurrent.Uninterruptibles;
 import com.seleniummaven.util.ElementUtil;
 
 public final class ContactPage {
 
-	
-	public ContactPage() {}
-	
-	private By textFirstName=By.name("first_name");
-	private By textLastName=By.name("last_name");
-	private By ddCategory=By.xpath("//div[@name='category' and @role='listbox']");
-	private By categoryListOptions=By.xpath("//div[@name='category' and @role='listbox']//div[@name='category']");
+	public ContactPage() {
+	}
+
+	private String chkboxContactName = "//td/a[text()='%replace%']/parent::td/preceding-sibling::td/div//input[@name='id' and @type='checkbox']";
+	private String chkboxContactNames="//td/a[text()='Test Hashin']/parent::td/preceding-sibling::td/div/input[@name='id']";
+	private String contactName="//td/a[text()='%replace%']";
+
+	private By textFName=By.name("first_name");
+	private By textLName=By.name("last_name");
+	private By dropDownCategory=By.xpath("//div[@name='category' and @role='listbox']");
+	private By listCategoryOptions=By.xpath("//div[@name='category' and @role='option']/span");
 	private By btnSave=By.xpath("//button[text()='Save']");
-	
+	private By btnNew=By.xpath("//button[text()='New']");
+
 	public ContactPage enterFirstName(String fName) {
-		ElementUtil.doSendKeys(textFirstName, fName, "first name");
+		ElementUtil.doSendKeys(textFName, fName, "first name");
 		return this;
 	}
-	
+
 	public ContactPage enterLastName(String lName) {
-		ElementUtil.doSendKeys(textLastName, lName, "last name");
+		ElementUtil.doSendKeys(textLName, lName, "last name");
 		return this;
 	}
-	
+
 	public ContactPage clickCategory() {
-		ElementUtil.doClick(ddCategory, "category");
+		ElementUtil.doClick(dropDownCategory, "category");
 		return this;
 	}
-	
+
 	public ContactPage selectCategoryOption(String category) {
 		clickCategory();
-		ElementUtil.getDropDownoptions(categoryListOptions, category, "category");
+		ElementUtil.getDropDownoptions(listCategoryOptions, category, "category");
 		return this;
 	}
-	
-	
+
 	public ContactPage clickSave() {
 		ElementUtil.doClick(btnSave, "save");
 		return this;
+	}
+	
+	public void selectCheckbox(String contact) {
+		ElementUtil.moveToElement(btnNew);
+		Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
+		ElementUtil.dynamicElementByJS(chkboxContactNames, contact);
+	}
+	
+	public String verifyCreatedUser(String contact) {
+		ElementUtil.moveToElement(btnNew);
+		return ElementUtil.dynamicWebElement(contactName, contact).getText();
 	}
 }
