@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 import com.seleniummaven.util.ElementUtil;
 
-public final class LoginPage {
+public final class LoginPage extends BasePage {
 
 	private By txtboxUsername = By.xpath("//input[@name='email' and @type='text']");
 	private By txtboxPassword = By.xpath("//input[@name='password' and @type='password']");
@@ -13,22 +13,22 @@ public final class LoginPage {
 
 	public LoginPage enterUsername(String username) {
 		ElementUtil.waitForElementToBeVisible(txtboxUsername);
-		ElementUtil.doSendKeys(txtboxUsername, username, "username");
+		doSendKeys(txtboxUsername, username, "username");
 		return this;
 	}
 
 	public LoginPage enterPassword(String password) {
-		ElementUtil.doSendKeys(txtboxPassword, password, "password");
+		doSendKeys(txtboxPassword, password, "password");
 		return this;
 	}
 
 	public LoginPage clickLogin() {
-		ElementUtil.doClick(btnLogin, "login");
+		doClick(btnLogin, "login");
 		return this;
 	}
 
 	public String errorTextInvalidLogin() {
-		return ElementUtil.getText(txtErrorLogin);
+		return getText(txtErrorLogin);
 	}
 
 	public HomePage userLogin(String un, String pwd) {

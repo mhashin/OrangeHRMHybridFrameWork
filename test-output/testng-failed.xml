@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="2" name="Failed suite [Suite]">
-  <listeners>
-    <listener class-name="com.orangeHRM.listener.ExtentListener"/>
-  </listeners>
-  <test thread-count="5" verbose="2" name="Test chrome(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.orangeHRM.test.TC02_AddUserTest">
+      <class name="com.seleniummaven.test.TC01_LoginTest">
         <methods>
+          <include name="userValidLoginTest" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="addUser"/>
         </methods>
-      </class> <!-- com.orangeHRM.test.TC02_AddUserTest -->
+      </class> <!-- com.seleniummaven.test.TC01_LoginTest -->
     </classes>
-  </test> <!-- Test chrome(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

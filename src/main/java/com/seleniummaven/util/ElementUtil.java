@@ -11,38 +11,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.seleniummaven.driverManager.DriverManager;
+import com.seleniummaven.pages.BasePage;
 import com.seleniummaven.reports.ExtentLogger;
 
-public final class ElementUtil {
+public final class ElementUtil extends BasePage{
 
-	public static WebElement getWebElement(By locator) {
-		WebElement ele = null;
-		try {
-			ele = DriverManager.getDriver().findElement(locator);
-		} catch (Exception e) {
-			System.out.println("element could not be created..." + locator);
-		}
-		return ele;
-	}
-
-	public static void doSendKeys(By locator, String value, String elementname) {
-		getWebElement(locator).sendKeys(value);
-		ExtentLogger.info("enter the " + elementname + " : " + value);
-	}
-
-	public static void doClick(By locator, String elementname) {
-		getWebElement(locator).click();
-		ExtentLogger.info("click the button : " + elementname);
-	}
-
-	public static String getTitle() {
-		return DriverManager.getDriver().getTitle();
-	}
-
-	public static String getText(By locator) {
-		return getWebElement(locator).getText();
-	}
-
+	
 	public static void waitForElementToBeVisible(By locator) {
 		WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Constants.getExplicitwait());
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

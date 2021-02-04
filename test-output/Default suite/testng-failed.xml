@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.orangeHRM.test.LoginTest">
+      <class name="com.seleniummaven.test.TC01_LoginTest">
         <methods>
+          <include name="userValidLoginTest" invocation-numbers="0"/>
           <include name="setUp"/>
-          <include name="userInvalidLoginTest" invocation-numbers="0 1"/>
-          <include name="userValidLoginTest" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.orangeHRM.test.LoginTest -->
+      </class> <!-- com.seleniummaven.test.TC01_LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

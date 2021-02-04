@@ -3,12 +3,11 @@ package com.seleniummaven.pages;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.seleniummaven.util.ElementUtil;
 
-public final class ContactPage {
+public final class ContactPage extends BasePage {
 
 	public ContactPage() {
 	}
@@ -25,17 +24,17 @@ public final class ContactPage {
 	private By btnNew=By.xpath("//button[text()='New']");
 
 	public ContactPage enterFirstName(String fName) {
-		ElementUtil.doSendKeys(textFName, fName, "first name");
+		doSendKeys(textFName, fName, "first name");
 		return this;
 	}
 
 	public ContactPage enterLastName(String lName) {
-		ElementUtil.doSendKeys(textLName, lName, "last name");
+		doSendKeys(textLName, lName, "last name");
 		return this;
 	}
 
 	public ContactPage clickCategory() {
-		ElementUtil.doClick(dropDownCategory, "category");
+	     doClick(dropDownCategory, "category");
 		return this;
 	}
 
@@ -46,7 +45,7 @@ public final class ContactPage {
 	}
 
 	public ContactPage clickSave() {
-		ElementUtil.doClick(btnSave, "save");
+		doClick(btnSave, "save");
 		return this;
 	}
 	

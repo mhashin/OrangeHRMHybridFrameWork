@@ -1,67 +1,38 @@
 package com.seleniummaven.pages;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import com.seleniummaven.driverManager.DriverManager;
-import com.seleniummaven.util.ReadPropertyFile;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
+import com.seleniummaven.reports.ExtentLogger;
 
 public class BasePage {
 
-	private WebDriver initBrowserLocal() {
-
-		String browser = ReadPropertyFile.get("browser").trim();
-		if(DriverManager.getDriver()==null) {
-
-		if (browser.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			DriverManager.setDriver(new ChromeDriver());
-		} else if (browser.equalsIgnoreCase("ff")) {
-			WebDriverManager.firefoxdriver().setup();
-			DriverManager.setDriver(new FirefoxDriver());
-		} else {
-			System.out.println(browser + "not found.Please pass the correct browser");
-		}
-		DriverManager.getDriver().manage().window().maximize();
-		DriverManager.getDriver().manage().deleteAllCookies();
-		DriverManager.getDriver().get(ReadPropertyFile.get("url"));
-		
-		return DriverManager.getDriver();
-		}
-		else {
-		return DriverManager.getDriver();
-}
-		}
-
-	public static void intialize() {
-		if (DriverManager.getDriver() == null) {
-			new BasePage();
-		}
+	protected static void doSendKeys(By locator, String value, String elementname) {
+		getWebElement(locator).sendKeys(value);
+		ExtentLogger.info("enter the " + elementname + " : " + value);
 	}
 
-	public BasePage() {
-
-		if (ReadPropertyFile.get("runMode").equalsIgnoreCase("local")) {
-			initBrowserLocal();
-		} else if (ReadPropertyFile.get("runMode").equalsIgnoreCase("remote")) {
-			initBrowserRemote();
-		}
-		else {
-			try {
-				throw new Exception("please pass correct runmode in properties file");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
-		
+	protected static void doClick(By locator, String elementname) {
+		getWebElement(locator).click();
+		ExtentLogger.info("click the button : " + elementname);
 	}
 
-	private void initBrowserRemote() {
+	protected static String getTitle() {
+		return DriverManager.getDriver().getTitle();
+	}
 
+	protected static String getText(By locator) {
+		return getWebElement(locator).getText();
+	}
+
+	protected static WebElement getWebElement(By locator) {
+		WebElement ele = null;
+		try {
+			ele = DriverManager.getDriver().findElement(locator);
+		} catch (Exception e) {
+			System.out.println("element could not be created..." + locator);
+		}
+		return ele;
 	}
 
 }
