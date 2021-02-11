@@ -16,8 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public final class DriverFactory {
 
 	public static WebDriver getDriver() {
-		
-		WebDriver driver = null;
+	
 		String browser=ReadPropertyFile.get("browser").trim();
 		String runMode = ReadPropertyFile.get("runMode").trim();
 
@@ -33,7 +32,7 @@ public final class DriverFactory {
 				}
 			} else {
 				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
+				DriverManager.setDriver(new ChromeDriver());
 			}
 
 		} else if (browser.equalsIgnoreCase("ff")) {
@@ -43,14 +42,15 @@ public final class DriverFactory {
 				dc.setBrowserName(BrowserType.FIREFOX);
 			} else {
 				WebDriverManager.firefoxdriver().setup();
-				driver=new FirefoxDriver();	
+				DriverManager.setDriver(new FirefoxDriver());	
 			}
 
 			DriverManager.setDriver(new FirefoxDriver());
 		} else {
 			System.out.println(browser + "not found.Please pass the correct browser");
 		}
-		return driver;
+		return DriverManager.getDriver();
+		
 	}
 	
 	
