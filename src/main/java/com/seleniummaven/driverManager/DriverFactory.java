@@ -1,12 +1,13 @@
 package com.seleniummaven.driverManager;
 
-import java.util.Objects;
-
+import java.net.MalformedURLException;
+import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.seleniummaven.util.ReadPropertyFile;
 
@@ -23,8 +24,13 @@ public final class DriverFactory {
 		if (browser.equalsIgnoreCase("chrome")) {
 
 			if (runMode.equalsIgnoreCase("remote")) {
-				DesiredCapabilities dc = new DesiredCapabilities();
-				dc.setBrowserName(BrowserType.CHROME);
+				DesiredCapabilities cap = new DesiredCapabilities();
+				cap.setBrowserName(BrowserType.CHROME);
+				try {
+					DriverManager.setDriver(new RemoteWebDriver(new URL(ReadPropertyFile.get("hubURL")), cap));
+				} catch (MalformedURLException e) {
+					e.printStackTrace();
+				}
 			} else {
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();

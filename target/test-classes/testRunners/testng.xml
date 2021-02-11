@@ -11,7 +11,7 @@
 	<test name="Test chrome" >
 		<classes>
 			<class name="com.seleniummaven.test.TC01_LoginTest" />
-			<class name="com.seleniummaven.test.TC02_AddUserTest"/>
+			<!-- <class name="com.seleniummaven.test.TC02_AddUserTest"/> -->
 		</classes>
 	</test> <!-- Test -->
 
